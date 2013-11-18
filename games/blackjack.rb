@@ -11,22 +11,32 @@
 
 ##Challenge
 #After successfully completing the previous game (there should be a commit with a working version of this game), alter the game so that a player can "hit" as many times as they want.
+
 cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 
 def deal_cards
-  rand
+  cards.sample()
 end
 
 def player_total
+  total = sum(array)
   puts total
 end
 
 def hit
   puts "want to hit or stay?"
+  player_choice = gets.chomp.lower
+  if player_choice == "yes" || "hit" || "hit me"
+    deal_cards
+  else
+    break
 end
 
 def did_win
-  if player
+  if total = 21
+    puts "You've won"
+  else
+    break
 end
 
 
