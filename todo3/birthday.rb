@@ -8,15 +8,13 @@ def is_birthday
   #birthday.parse()
 
   today = Time.new
-    # today_date.month
-    # today_date.day
-  today = (today_date.month, today_date.day)
+  today = (time.now.month, time.now.day)
     #strptime
 
   if birthday == today
     puts "Happy Birthday!"
   else
-    puts "Awesome!"
+    puts "Awesome, but today's not your birthday!"
   end
 
 end
