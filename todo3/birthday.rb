@@ -7,8 +7,7 @@ def is_birthday
   birthday = strptime(gets.chomp)
   #birthday.parse()
 
-  today = Time.new
-  today = (time.now.month, time.now.day)
+ today = (Time.now.month, Time.now.day)
     #strptime
 
   if birthday == today
