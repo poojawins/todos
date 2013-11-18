@@ -68,10 +68,10 @@ puts winners
 some_words = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
 a_words = []
 some_words.each{ |word| word[0] == "a" ? a_words << word : next }
-puts a_words
+puts a_words 
 
 #12. sum all the numbers in the following array
-sum_array = [11,4,7,8,9,100,134].inject(:+)
+sum_array = [11,4,7,8,9,100,134].reduce(:+)
 
 #13. Add an "s" to each word in the array except for the 2nd element in the array?
 things_array = ["hand","feet", "knee", "table"]
@@ -89,6 +89,8 @@ things_array.each{
 #Count how many times each word appears in my story.
 #Tip: You'll need to use Hash.new(0) to do this rather than creating a hash using literal syntax like {}.
 
+count = Hash.new(0)
+
 
 #15song library
 
@@ -99,3 +101,8 @@ things_array.each{
 #to a nested hash of the form
 #{:artist1 => :songs => [], :artist2 => :songs => []}
 #[]
+
+
+
+
+
