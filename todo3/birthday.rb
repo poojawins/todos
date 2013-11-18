@@ -4,11 +4,9 @@ require Date
 def is_birthday
 
   puts "Enter your birthday (mm/dd)" 
-  birthday = strptime(gets.chomp)
-  #birthday.parse()
+  birthday = strptime(gets.chomp,'%m/%d')
 
- today = (Time.now.month, Time.now.day)
-    #strptime
+ today = (Time.now.month).to_s + "/" + (Time.now.day).to_s
 
   if birthday == today
     puts "Happy Birthday!"
