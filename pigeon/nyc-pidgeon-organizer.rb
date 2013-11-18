@@ -23,6 +23,9 @@ pigeon_data = {
   }
 }
 
+
+#i looked through the hash for gender since i knew no pigeon's were repeated
+#working on the solution for the general case, since this way is cheaty
 pigeon_list = {}
 pigeon_data[:gender].each do |gender, pigeon_names|  
   pigeon_names.each do |name|
