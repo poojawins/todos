@@ -1,13 +1,19 @@
-i = 1
-while i < 101
-  if i % 15 == 0
+def fizzbuzz(number)
+  if number % 15 == 0
     puts "fizzbuzz"
-  elsif i % 3 == 0
+  elsif number % 3 == 0
     puts "fizz"
-  elsif i % 5 == 0 
+  elsif number % 5 == 0 
     puts "buzz"
   else
-    puts i
+    puts number
   end
-  i += 1
 end
+
+def enter_number()
+  puts "Enter a number you want to analyze"
+  entered_number = gets.chomp.to_i
+  fizzbuzz(entered_number)
+end
+
+enter_number()
