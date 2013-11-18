@@ -26,7 +26,7 @@ my_array.each { |name| puts name }
   #["blake", "ashley", "scott"] 
   #should transform into
   #["blake", "scott", "ashley"]
-puts my_array[0], my_array[2], my_array[1]
+new_array =  my_array[0], my_array[2], my_array[1]
 
 #7. using the following array create a hash where the elements in the array are the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
   #["blake", "ashley", "scott"]
@@ -61,12 +61,12 @@ winner_array = who_wins.each { |key, value|, value == "winner" puts key }
 
 
 
-#11. sum all the numbers in the following array
+#12. sum all the numbers in the following array
 sum_array = [11,4,7,8,9,100,134]
 
 
 
-#12. Add an "s" to each word in the array except for the 2nd element in the array?
+#13. Add an "s" to each word in the array except for the 2nd element in the array?
   ["hand","feet", "knee", "table"]
 
 
@@ -74,7 +74,7 @@ sum_array = [11,4,7,8,9,100,134]
 
 #CHALLENGE
 
-#13word count
+#14word count
 
 "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
 
@@ -82,7 +82,7 @@ sum_array = [11,4,7,8,9,100,134]
 #Tip: You'll need to use Hash.new(0) to do this rather than creating a hash using literal syntax like {}.
 
 
-#14song library
+#15song library
 
 #convert the following array of song titles
   
