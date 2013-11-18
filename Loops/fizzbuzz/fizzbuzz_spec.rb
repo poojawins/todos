@@ -1,4 +1,4 @@
-require_relative 'fizzbuzz'
+require_relative './fizzbuzz'
 
 describe "#fizzbuzz" do
 	it "should return fizzbuzz when number mod 15 = 0" do
