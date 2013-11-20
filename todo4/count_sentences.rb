@@ -3,6 +3,8 @@
 
 class String
   def count_sentences
-    # code goes here
+    counter = 0
+    self.split(".").each {|x| counter += 1}
+    counter
   end
 end
