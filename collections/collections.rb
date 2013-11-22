@@ -31,9 +31,10 @@ new_array =  my_array[0], my_array[2], my_array[1]
 #7. using the following array create a hash where the elements in the array are the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
   #["blake", "ashley", "scott"]
 #name_hash = my_array.each{ |key| puts key, key[2] = "$"}
-names = my_array
-values = my_array.each{ |key| puts key => key[2] = "$"}
-name_hash = my_array.each{ |keys, values| puts keys,values }
+hash = {}
+my_array.each do |name|
+  hash[name] = { |name| puts name[0..1] + "$" + name[3..(name.length)]}
+end
 
 #8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers greater than 10 or less than 10 in the following array
 num_array = [100, 1000, 5, 2, 3, 15, 1, 1, 100]
@@ -57,32 +58,29 @@ num_hash = {
 #9. find all the winners and put them in an array
 who_wins = {:blake => "winner", :ashley => "loser", :caroline => "loser", :carlos => "winner"}
 winners = []
-who_wins.each{ |key, value| value == "winner" ? winners << key : next }
-puts winners
+who_wins.each{ |name, status| status == "winner" ? winners << name : next }
 
 #10. add the following arrays
   #[1,2,3] and [5,9,4]
-  [1,2,3].concat([5, 9, 4])
+[1,2,3].concat([5, 9, 4])
 
 #11. find all words that begin with "a" in the following array
 some_words = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
 a_words = []
 some_words.each{ |word| word[0] == "a" ? a_words << word : next }
-puts a_words 
 
 #12. sum all the numbers in the following array
-sum_array = [11,4,7,8,9,100,134].reduce(:+)
+sum_array = [11,4,7,8,9,100,134].inject(:+)
 
 #13. Add an "s" to each word in the array except for the 2nd element in the array?
 things_array = ["hand","feet", "knee", "table"]
-things_array.each{
-  |word|
-  puts word += "s" unless index == 1
- }
+things_array.each do |word|
+  word += "s" unless index == 1
+end
 
 #CHALLENGE
 
-#14word count
+#14 word count
 
 "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
 
@@ -92,7 +90,11 @@ things_array.each{
 count = Hash.new(0)
 
 
-#15song library
+
+
+
+
+#15 song library
 
 #convert the following array of song titles
   
