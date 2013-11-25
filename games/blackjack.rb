@@ -28,8 +28,8 @@ def hit
   if player_total < 21
     puts "want to hit or stay?"
     player_choice = gets.chomp.lower
-    if player_choice == "yes" || "hit" || "hit me"
-      deal_cards
+    if player_choice == "yes" || "hit" 
+      player_total << deal_cards
     else
       "Sorry, you lost."
     end
@@ -37,7 +37,7 @@ def hit
 end
 
 def did_win
-  if total == 21
+  if player_total == 21
     puts "You've won!"
   else
     puts "Sorry, you lost."
