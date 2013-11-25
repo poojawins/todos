@@ -15,3 +15,24 @@ def make_list(array)
     i += 1
   end
 end
+
+#if you want to stop keeping track of index
+#def make_list(array)
+#  y = []
+#  array.each_with_index do |x, index|
+#    y << "#{index + 1}, #{x}"
+#  end
+#  y 
+#end
+
+#using map method
+#def make_list(array)
+#  array.map.with_index { |item, index| "#{index + 1}. #{item}" } 
+#end
+
+#Creating class
+#class Array
+#  def make_list
+#    self.map.with_index { |item, index| "#{index + 1}. #{item}" }
+#  end
+#end
