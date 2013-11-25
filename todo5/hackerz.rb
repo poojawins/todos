@@ -22,22 +22,19 @@ joined_password =  "intblakernblaketsashleythblakeashleyall"
 
 #decoder:
 def decode(joined_password)
-  joined_password = "intblakernblaketsashleythblakeashleyall"
+  joined_password # = "intblakernblaketsashleythblakeashleyall"
   joined_password.gsub!("ashley", " ")
-  #intblakernblakets thblake all
+  #"intblakernblakets thblake all"
   joined_password.gsub!("blake", "e")
-  #internets the all
-  joined_password = new_password_array.join(" ")
-  #internets the all
-  new_password_array.compact!
-  #internets the all
-
+  #"internets the all"
+  #don't need to do anything because we don't have extra spaces even though encode did joined_password = new_password_array.join(" ")
+  #still "internets the all"
+  new_password_array = []
   new_password_array[0] = password_array.last
   new_password_array[3] = password_array.first
   new_password_array[1] = password_array[1]
-  new_password_array = []
-
   new_password_array = pass_as_string.split("_")
+  new_password_array.compact!
   #all_the_internets
   pass_as_string = password.to_s
   #password is a symbol
