@@ -135,6 +135,17 @@ sum_array.each do |x|
   sum += x
 end
 
+class Array
+  def collect(8block)
+    container = []
+    self.each block call
+    container
+  end
+end
+#each vs. collect
+#each doesn't do anything with the elements
+#collect creates a new array and iterates over and returns the value
+
 #13. Add an "s" to each word in the array except for the 2nd element in the array?
 things_array = ["hand","feet", "knee", "table"]
 things_array.each{
