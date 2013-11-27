@@ -1,4 +1,5 @@
-Implement your own versions of collect and select
+#Implement your own versions of collect and select
+#use yield!
 
 def my_collect(array)
 
