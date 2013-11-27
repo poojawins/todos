@@ -1,31 +1,29 @@
-
-
 class Deli
 
   attr_accessor :line
 
-  def initialize(customer_name)
-    @customer_name = customer_name
+  def initialize
     @line = []
   end
 
   def take_a_number(customer_name)
-    customer_name = (line.length + 1).to_s + " " + customer_name
-    line << customer_name
+    format_name = (1 + @line.length).to_s + ". " + customer_name
+    @line << format_name
+    @line.length
   end
 
-  # def now_serving
-  #   puts line[0]
-  #   line = line.shift
-  # end
+  def now_serving
+    @line.shift
+  end
 
 end
 
-my_turn = Deli.new("Pooja")
-rob_turn = Deli.new("Rob")
-other_turn = Deli.new("Other")
-puts my_turn.take_a_number("Pooja")
-puts my_turn.take_a_number("Rob")
-puts my_turn.take_a_number("Other")
-# puts my_turn.now_serving
+my_turn = Deli.new
+my_turn.take_a_number("Pooja")
+my_turn.take_a_number("Rob")
+my_turn.take_a_number("John")
+puts my_turn.now_serving
+puts my_turn.now_serving
+puts my_turn.now_serving
+puts my_turn.now_serving
 

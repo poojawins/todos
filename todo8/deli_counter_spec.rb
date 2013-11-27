@@ -10,17 +10,26 @@
 require './deli_counter'
 
 
-describe Deli, "take_a_number" do
-  it "should return" do
-    expect().to eq()
+describe Deli, "#take_a_number" do
+  it "should return customer's ticket number" do 
+    Deli.new.take_a_number("Pooja").should eq(1)
   end
+end
 
-  it "should " do
-    expect().to eq()
+describe Deli, "#now_serving" do 
+  it "should remove the first customer in line and return their name" do 
+    corner_deli = Deli.new
+    corner_deli.take_a_number("Rob").should eq(1)
+    corner_deli.now_serving.should eq("1. Rob")
   end
-
-  it "should " do
-    expect().to eq()
+  it "should work with more then one customer" do
+    rob_deli = Deli.new
+    rob_deli.take_a_number("Rob").should eq(1)
+    rob_deli.take_a_number("Pooja").should eq(2)
+    rob_deli.take_a_number("John").should eq(3)
+    
+    rob_deli.now_serving.should eq("1. Rob")
+    rob_deli.now_serving.should eq("2. Pooja")
+    rob_deli.now_serving.should eq("3. John")
   end
-
 end
