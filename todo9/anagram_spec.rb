@@ -1,7 +1,7 @@
 # Anagram Detector
 
-# Write a program that, given a word and a list of possible anagrams, 
-# selects the correct one(s).
+# Write a program that, given a word and a list of possible
+# anagrams, selects the correct one(s).
 
 # In other words, given: "listen" and %w(enlists google inlets banana) 
 # the program should return "inlets".
@@ -9,8 +9,6 @@
 # PS what is %w? 
 # http://stackoverflow.com/questions/1274675/ruby-what-does-warray-mean
 
-# Save this file as anagram_spec.rb
-# run it with rspec anagram_spec.rb
 
 RSpec.configure do |config|
   # Use color in STDOUT
