@@ -7,20 +7,18 @@ class Anagram
   end
 
   def match(list)
-    # matched = []
-    # list.each do |check_word|
-    # into characters
-    #   if check_word characters array == @word characters array
-    #     matched << checked_word
-    #   end
-  end
+    matched = []
+    
+    our_word = word.split(%r{\s*}).sort
 
+    list.each do |word|
+      matched << word if word.split(%r{\s*}).sort == our_word
+    end
+    matched
+  end
 
 end
 
-my_word = "sup"
-my_list = %w(ups list above)
-
-my_anagram = Anagram.new(my_word)
-puts my_anagram.match(my_list)
+my_anagram = Anagram.new("act")
+puts my_anagram.match(%w(cat tac sum above action))
 
