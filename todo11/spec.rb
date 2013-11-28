@@ -1,4 +1,4 @@
-require_relative "some_file"
+require_relative "./key_for_min_value"
 
 describe "smallest hash value" do
   it "should return the key of the smallest hash value" do
@@ -14,3 +14,4 @@ describe "smallest hash value" do
   end
 
 end
+
