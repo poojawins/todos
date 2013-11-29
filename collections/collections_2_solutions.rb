@@ -132,16 +132,84 @@ hash_count([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])
 # hash_count([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])
 
 #9
+def merge_dem_arrays(array1, array2)
+  merged = []
+  array2.each do |hash2|
+    hash2.each do |name, info|
+      array1.each do |hash1|
+        if hash1[:first_name] == name
+          info[:first_name] = name
+          merged << info
+        end
+      end
+    end
+  end
+  puts merged
+end
+
+name_array = 
+[
+  {:first_name => "blake"},
+  {:first_name => "ashley"}
+]
+
+info_array = 
+[
+  {
+    "blake" => 
+    {:awesomeness => 10,
+    :height => "74",
+    :last_name => "johnson"},
+
+    "ashley" => 
+    {:awesomeness => 9,
+    :height => 60,
+    :last_name => "dubs"}
+  }
+]
+
+merge_dem_arrays(name_array, info_array)
+
+# returns:
+
+# [
+  #{:first_name => "blake",
+#  :awesomeness => 10,
+#  :height => "74",
+#  :last_name => "johnson"},
+#  
+  #{:first_name => "ashley",
+#   :awesomeness => 9,
+#   :height => 60,
+#   :last_name => "dubs"}
+# ]
+
+
+#returns:
+# [
+#        {
+#          :first_name => "blake",
+#         :awesomeness => 10,
+#              :height => "74",
+#           :last_name => "johnson"
+#     },
+#        {
+#          :first_name => "ashley",
+#         :awesomeness => 9,
+#              :height => 60,
+#           :last_name => "dubs"
+#     }
+# ]
 
 #10
 def cool_array(thing)
+  answer_array = []
   thing.each do |person|
     if person[:temperature] == "cool"
-      print person
-    else
-      next
+      answer_array << person
     end
   end
+  answer_array
 end
 cool_array([
         {
@@ -155,4 +223,67 @@ cool_array([
 ])
 
 #11
+dev_schools = 
+{
+  "flatiron school bk" => {
+    :location => "NYC",
+    :price => "free"
+  },
+  "dev boot camp" => {
+    :location => "SF",
+    :price => "a million dollars"
+  },
+  "dev boot camp chicago" => {
+    :location => "Chicago",
+    :price => "half a million dollars"
+  },
+  "general assembly" => {
+    :location => "NYC",
+    :price => "too much"
+  },
+  "some school in SF" => {
+    :location => "SF",
+    :price => "your soul"
+  }
+}
+
+def by_location(some_hash)
+  location_hash = {}
+  some_hash.each do |school_name, school_info|
+    location = school_info[:location]
+    price = school_info[:price]
+    if not location_hash.has_key?(location)
+      location_hash[location] = []
+    end
+    location_hash[location] << {:name => school_name, :price => price}
+  end
+
+  puts location_hash
+
+end
+
+by_location(dev_schools)
+
+#returns:
+# loc_hash =
+# { 
+#   "NYC" => [
+#   {:school => "flatiron school bk",
+#   :price => "free"},
+#   {:school => "general assembly",
+#   :price => "too much"}
+#   ],
+
+#   "SF" => [
+#   {:school => "dev boot camp",
+#   :price => "a million dollars"},
+#   {:school => "some school in SF",
+#   :price => "your soul"},
+#   ],
+
+#   "Chicago" => [
+#   {:school => "dev boot camp chicago",
+#   :price => "half a million dollars"}
+#   ],
+# }
 
