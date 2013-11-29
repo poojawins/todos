@@ -56,10 +56,49 @@ languages.each do |style, style_hash|
   style_hash.each do |name, type_hash|
     #name = :ruby type_hash = {:type => "interpreted"}
     new_hash[name] ||= {}
-    new_hash[name][:style] ||= style
+    new_hash[name][:style]||= style
     new_hash[name][:type] ||= type_hash[:type]
   end
 end
 
 p new_hash
+
+#note: output 'style' is not in array form
+#outputs:
+# {
+#   :ruby=>{
+#   :style=>:oo, 
+#   :type=>"interpreted"
+#   }, 
+
+#   :javascript=>{
+#   :style=>:oo, 
+#   :type=>"interpreted"
+#   }, 
+
+#   :python=>{
+#   :style=>:oo, 
+#   :type=>"interpreted"
+#   }, 
+
+#   :java=>{
+#   :style=>:oo, 
+#   :type=>"compiled"
+#   }, 
+
+#   :clojure=>{
+#   :style=>:functional, 
+#   :type=>"compiled"
+#   }, 
+
+#   :erlang=>{
+#   :style=>:functional, 
+#   :type=>"compiled"
+#   }, 
+
+#   :scala=>{
+#   :style=>:functional, 
+#   :type=>"compiled"
+#   }
+# }
 
