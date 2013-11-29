@@ -33,7 +33,7 @@ new_array =  my_array[0], my_array[2], my_array[1]
 #name_hash = my_array.each{ |key| puts key, key[2] = "$"}
 hash = {}
 my_array.each do |name|
-  hash[name] = { |name| puts name[0..1] + "$" + name[3..(name.length)]}
+  hash[name] = { |name| puts name[0..1] + "$" + name[3..(name.length)] }
 end
 
 #8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers greater than 10 or less than 10 in the following array
@@ -88,30 +88,35 @@ end
 
 story = "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
 
-#my thoughts:
-#downcase all words first
-#get rid of punctuation because it will mess up count
-  #maybe substitute punctuation with "" ??
+story = story.split!
 
-count = Hash.new(0)
+story.map! do |word|
+  word.downcase.gsub(/[.,!?]/, "")
+end
 
+count_hash = Hash.new(0)
 story.each do |word|
-  count[word] += 1
+  count_hash[word] +=1
+end
 
+puts count_hash
 
 #15 song library
 
 #convert the following array of song titles to a nested hash of the form
 #{:artist1 => :songs => [], :artist2 => :songs => []}
-#[] 
 
 song_array = ["dave matthews band - tripping billies", "dave matthews band - #41", "calvin harris - some techno song", "avicii - some other dance song", "oasis - wonderwall", "oasis - champagne supernova"]
 
 song_hash = {}
 song_array.each do |band_and_song|
-  band_and_song.split(" - ")
+  artist = band_and_song.split(" - ")[0]
+  song = band_and_song.split(" - ")[1]
+  if not song_hash.has_key?(artist)
+    song_hash[artist] = []
+  end
+  song_hash[artist] << song
 end
 
-
-
+puts song_hash
 
