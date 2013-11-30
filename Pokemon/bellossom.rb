@@ -7,9 +7,9 @@ class Bellossom
                "Magical Leaf" => 20,
                "Sweet Scent" => 20,
                "Stun Spore" => 30
-  }
+              }
 
-  def initialize
+  def initialize(level, type, abilities, catch_rate, entry, hp, exp)
     @level = 7
     @type = "Grass"
     @abilities = "Healer"
@@ -17,6 +17,10 @@ class Bellossom
     @entry = "They will sometimes gather and start dancing. It's also known as a ritual dance to worship the sun.*"
     @hp = 75
     @exp = 184
+  end
+  
+  def say_name
+    puts "Bellossom!"
   end
 
 end

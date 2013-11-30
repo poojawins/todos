@@ -7,9 +7,9 @@ class Bonsly
                "Low Kick" => 20,
                "Copycat" => 20,
                "Slam" => 20
-  }
+              }
 
-  def initialize
+  def initialize(level, type, abilities, catch_rate, entry, hp, exp)
     @level = 1
     @type = "Rock"
     @abilities = "Rattled"
@@ -17,6 +17,10 @@ class Bonsly
     @entry = "Bonsly, the Bonsai Pokémon. Bonsly is the pre-evolved form of Sudowoodo. Although it looks like a Grass Pokémon, it is actually a Rock-type. When it collects too much moisture, it produces fake tears to get rid of it."
     @hp = 50
     @exp = 68
+  end
+
+  def say_name
+    puts "Bonsly!"
   end
 
 end

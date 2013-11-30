@@ -7,9 +7,9 @@ class Bellossom
                "Magical Leaf" => 20,
                "Sweet Scent" => 20,
                "Stun Spore" => 30
-  }
+              }
 
-  def initialize
+  def initialize(level, type, abilities, catch_rate, entry, hp, exp)
     @level = 7
     @type = "Grass"
     @abilities = "Healer"
@@ -22,15 +22,17 @@ class Bellossom
   def level_up
     if exp > level**3
       level += 1
+    end
   end
 
-  def gain_exp new_exp
-    exp += new_exp
-  end
+  # def gain_exp new_exp
+  #   exp += new_exp
+  # end
 
   def say_name
-    "Bellossom!"
+    puts "Bellossom!"
   end
+
 end
 
 
@@ -43,9 +45,9 @@ class Marill
                "Bubble Beam" => 20,
                "Helping Hand" => 20,
                "Bubble" => 30
-  }
+              }
 
-  def initialize
+  def initialize (level, type, abilities, catch_rate, entry, hp, exp)
     @level = 3
     @type = ["Water", "Fairy"]
     @abilities = "Sap Sipper"
@@ -58,15 +60,17 @@ class Marill
   def level_up
     if exp > level**3
       level += 1
+    end
   end
 
-  def gain_exp new_exp
-    exp += new_exp
-  end
+  # def gain_exp new_exp
+  #   exp += new_exp
+  # end
 
   def say_name
-    "Marill!"
+    puts "Marill!"
   end
+
 end
 
 
@@ -79,9 +83,9 @@ class Bonsly
                "Low Kick" => 20,
                "Copycat" => 20,
                "Slam" => 20
-  }
+              }
 
-  def initialize
+  def initialize(level, type, abilities, catch_rate, entry, hp, exp)
     @level = 1
     @type = "Rock"
     @abilities = "Rattled"
@@ -94,13 +98,16 @@ class Bonsly
   def level_up
     if exp > level**3
       level += 1
+    end
   end
 
-  def gain_exp new_exp
-    exp += new_exp
-  end
+  # def gain_exp new_exp
+  #   exp += new_exp
+  # end
 
   def say_name
-    "Bonsly!"
+    puts "Bonsly!"
   end
+
 end
+

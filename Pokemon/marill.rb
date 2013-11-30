@@ -7,9 +7,9 @@ class Marill
                "Bubble Beam" => 20,
                "Helping Hand" => 20,
                "Bubble" => 30
-  }
+              }
 
-  def initialize
+  def initialize(level, type, abilities, catch_rate, entry, hp, exp)
     @level = 3
     @type = ["Water", "Fairy"]
     @abilities = "Sap Sipper"
@@ -18,5 +18,10 @@ class Marill
     @hp = 70
     @exp = 58
   end
+  
+  def say_name
+    puts "Marill!"
+  end
 
 end
+
