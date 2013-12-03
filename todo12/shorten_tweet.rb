@@ -1,15 +1,15 @@
 
 def shorten_tweet(tweet)
   if tweet.length > 140
-    tweet.gsub!('to ', '2 ')
-    tweet.gsub!('two ', '2 ')
-    tweet.gsub!('too ', '2 ')
-    tweet.gsub!('for ', '4 ')
-    tweet.gsub!('four ', '4 ')
-    tweet.gsub!('be ', 'b ')
-    tweet.gsub!('you ', 'u ')
-    tweet.gsub!('at ', '@ ')
-    tweet.gsub!('and ', '& ')
+    tweet.gsub!(' to ', ' 2 ')
+    tweet.gsub!(' two ', ' 2 ')
+    tweet.gsub!(' too ', ' 2 ')
+    tweet.gsub!(' for ', ' 4 ')
+    tweet.gsub!(' four ', ' 4 ')
+    tweet.gsub!(' be ', ' b ')
+    tweet.gsub!(' you ', ' u ')
+    tweet.gsub!(' at ', ' @ ')
+    tweet.gsub!(' and ', ' & ')
   end
   puts tweet
   puts tweet.length
