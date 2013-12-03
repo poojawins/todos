@@ -21,24 +21,39 @@ pigeon_data = {
   }
 }
 
+
+#i looked through the hash for gender since i knew no pigeon's were repeated
+#working on the solution for the general case, since this way is cheaty
+
 pigeon_list = {}
-pigeon_data.each_pair do |thing, thing_hash|
-  thing_hash.each_pair do |attribute, name_array|
-    name_array.each do |name|
-      if pigeon_list[name].nil?
-        pigeon_list[name] = {}
-      end
-      if pigeon_list[name][:color].nil?
-        pigeon_list[name][:color] = []
-      end
-      if thing == :color
-        pigeon_list[name][thing] << attribute
-      else
-        pigeon_list[name][thing] = attribute
-      end
-    end
+pigeon_data[:gender].each do |gender, pigeon_names|  
+  pigeon_names.each do |name|
+  pigeon_list[name] = {}
   end
 end
+  
+pigeon_list.each do |name, attributes|
+  attributes[:color] = []
+end
+
+pigeon_data[:color].each do |color, pigeon_names|
+  pigeon_names.each do |name|
+    pigeon_list[name][:color] << color
+  end
+end
+
+pigeon_data[:gender].each do |gender, pigeon_names|
+  pigeon_names.each do |name|
+    pigeon_list[name][:gender] = gender
+  end
+end
+
+pigeon_data[:lives].each do |location, pigeon_names|
+  pigeon_names.each do |name|
+    pigeon_list[name][:lives] = location
+  end
+end
+
 puts pigeon_list
 
 # Your output should match the hash below:
@@ -80,3 +95,4 @@ puts pigeon_list
 #     :lives => "Central Park"
 #   }
 # }
+
