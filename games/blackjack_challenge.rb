@@ -1,12 +1,11 @@
 
 class Blackjack
   
-  attr_accessor :cards, :counter, :turns
+  attr_accessor :cards, :counter
 
   def initialize
     @cards = [ (1+rand(11)), (1+rand(11)) ]
     @counter = cards[0] + cards[1]
-    @turns = 0
   end
 
   def greeting
@@ -23,7 +22,7 @@ class Blackjack
   end
 
   def hit
-    if counter < 21 && turns < 2
+    if counter < 21
       puts "want to hit?"
       player_choice = gets.chomp.downcase
       if player_choice == "yes" 
@@ -38,7 +37,6 @@ class Blackjack
  def deal_card
     new_card =  (1 + rand(11))
     @counter = counter + new_card
-    @turns = turns + 1
     puts "Your new total is #{counter}"
     did_win
   end
@@ -49,9 +47,6 @@ class Blackjack
     elsif counter > 21
       puts "Sorry, you're over. You lost!"
       exit
-    elsif counter < 21 && turns == 2
-      puts "Sorry, only 2 hits allowed. You lost!"
-      exit
     else
       hit
     end
@@ -61,5 +56,3 @@ end
 
 my_game = Blackjack.new
 start = my_game.greeting
-  
-

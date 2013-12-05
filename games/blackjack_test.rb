@@ -9,9 +9,10 @@ def player_total
   total_points = points.reduce(:+) 
   puts total_points
     if total_points < 21
-    puts "Do you want to hit or stay?"
+    puts "Do you want to hit?"
     player_choice = gets.chomp.downcase
-    if player_choice == "hit"
+    if player_choice == "yes"
+      
       points << deal_card
       puts total_points
     else
@@ -36,4 +37,4 @@ def did_win
     puts "Sorry, you lost."
 end
 
-player_total
+did_win
