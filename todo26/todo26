@@ -2,16 +2,24 @@
 My cool friend Jenn Schiffer wrote this piece recently:
 https://medium.com/cool-code-pal/e32792e56b53
 It is a joke. Explain why.
- 
+
+The in-line styling would override the stylesheet/anything else. 
+(magenta will beat lime)
+
+
 Then, take a look at: 
 https://twitter.com/horse_css
 Find a joke or two that you understand and explain.
 
 :first-child and :last-child are insensitive towards middle children
+these target only the first-child or last-child.
+
 JavaScript, not quite "programming"
-learning ruby
-For sale: pseudo-class, never used.
-hvc: horse view controller
+people usually say html an css are not "real" programming languages
+
 css valentimes day cards telling your lover how !important they are to you
+never use !important
+
 someone told me about this new css package manager called rm -rf home sure is taking a long time to install though
-its the end of the dom as we know it
+lol rm -rf
+
