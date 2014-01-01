@@ -2,14 +2,19 @@
 http://sewingandembroiderywarehouse.com/embtrb.htm
  
 There is something wrong with this page.
- 
 Using your web inspector identify what is wrong.
- 
 As algorithmically as possible, explain why this error causes this visual effect.
-  
 What are the other things wrong with this page? Why do you think they are wrong?
- 
 When was this page made? How? Explain how you figured it out.
 
+The problem is that each h3 becomes increasingly larger on the page.
+Using inspect element, it seems that each new h3 is nested in the previous h3.
+This makes each subsequent h3 larger than the previous one.
 
+Other problems:
+Repetitive font formatting (color and face) for each h3.
+Weird/horrible logo
+
+The site uses HTML 3.2, which came out in 1997. 
+I assume this webpage was made sometime around then.
 
