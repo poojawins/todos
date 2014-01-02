@@ -22,6 +22,7 @@
 # array_init                      # => [ '0' , '100' , '200' , '300' , 400' , '500' ]
 # array_init { 'hi }              # => [ 'hi' , 'hi' , 'hi' , 'hi' ]
 
+require_relative './array_initialization'
 
 describe 'array_init' do
   

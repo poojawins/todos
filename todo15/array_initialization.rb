@@ -1,5 +1,4 @@
-prereqs: initializing, methods, blocks, yield, arrays
-
+# prereqs: initializing, methods, blocks, yield, arrays
 
 # EXAMPLES:
 #   
@@ -16,18 +15,11 @@ prereqs: initializing, methods, blocks, yield, arrays
 #   end
 # end
 
-
-def array_init(=5)
-
+def array_init(size=5)
   if block_given?
-    array = 
-
-
+    array = Array.new(size) {|i| yield i}
   else
-    array = 
-    { |i| (i * 100).to_s }
-
-    
+    array = Array.new(size) { |i| (i * 100).to_s } 
   end
 end
 
