@@ -20,8 +20,13 @@ class Triangle
   end
 
   def not_valid?
-    x + y <= z || y + z <= x || z + x < y
-    x <= 0 || y <= 0 || z <= 0
+    if (x + y <= z || y + z <= x || z + x <= y)
+      return true
+    end
+    if (x <= 0 || y <= 0 || z <= 0)
+      return true
+    end
+    return false
   end
 
 end
