@@ -89,17 +89,21 @@ end
 story = "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
 
 story = story.split!
-
 story.map! do |word|
   word.downcase.gsub(/[.,!?]/, "")
 end
-
 count_hash = Hash.new(0)
 story.each do |word|
   count_hash[word] +=1
 end
-
 puts count_hash
+---------
+split_string = "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
+my_hash = Hash.new(0)
+split_string.downcase.split.each do |word|
+    my_hash[word] = split_string.split.count(word)
+end
+puts my_hash
 
 #15 song library
 
@@ -108,15 +112,15 @@ puts count_hash
 
 song_array = ["dave matthews band - tripping billies", "dave matthews band - #41", "calvin harris - some techno song", "avicii - some other dance song", "oasis - wonderwall", "oasis - champagne supernova"]
 
-song_hash = {}
-song_array.each do |band_and_song|
-  artist = band_and_song.split(" - ")[0]
-  song = band_and_song.split(" - ")[1]
+song_hash = Hash.new(0)
+titles.each do |song|
+  artist = song.split(" - ")[0]
+  song = song.split(" - ")[1]
   if not song_hash.has_key?(artist)
-    song_hash[artist] = []
-  end
+    song_hash[artist] = ["#{song}"]
+  elsif song_hash.has_key?(artist)
   song_hash[artist] << song
+  end
 end
-
 puts song_hash
 

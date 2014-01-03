@@ -33,7 +33,7 @@ new_array =  my_array[0], my_array[2], my_array[1]
 
 my_arrayarray.replace(["blake", "scott", "ashley"])
 
-my_array.delted("ashley")
+my_array.delete("ashley")
 my_array << "ashley"
 
 array.values_at(0,2,1)
@@ -42,9 +42,9 @@ my_array.pop = scott
 array.insert(1, scott)
 
 my_array.insert(1,my_array.delete_at(2))
-#this destrictively mutates the array
+#this destructively mutates the array
 
-7. using the following array create a hash where the elements in the array are the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
+# 7. using the following array create a hash where the elements in the array are the keys and the values of the hash are those elements with the 3rd character changed to a dollar sign.
   #["blake", "ashley", "scott"]
 hash = {}
 array.each do |name|
@@ -156,26 +156,35 @@ things_array.each{
 #CHALLENGE
 
 #14word count
-
-"The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
-
 #Count how many times each word appears in my story.
 #Tip: You'll need to use Hash.new(0) to do this rather than creating a hash using literal syntax like {}.
-
-count = Hash.new(0)
-
+split_string = "The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong"
+my_hash = Hash.new(0)
+split_string.downcase.split.each do |word|
+    my_hash[word] = split_string.split.count(word)
+end
+puts my_hash
 
 #15song library
-
 #convert the following array of song titles
-  
-  ["dave matthews band - tripping billies", "dave matthews band - #41", "calvin harris - some techno song", "avicii - some other dance song", "oasis - wonderwall", "oasis - champagne supernova"]
-
 #to a nested hash of the form
 #{:artist1 => :songs => [], :artist2 => :songs => []}
-#[]
-
-
-
-
+#[]  
+titles = ["dave matthews band - tripping billies", 
+          "dave matthews band - #41", 
+          "calvin harris - some techno song", 
+          "avicii - some other dance song", 
+          "oasis - wonderwall", 
+          "oasis - champagne supernova"]
+song_hash = Hash.new(0)
+titles.each do |song|
+  artist = song.split(" - ")[0]
+  song = song.split(" - ")[1]
+  if not song_hash.has_key?(artist)
+    song_hash[artist] = ["#{song}"]
+  elsif song_hash.has_key?(artist)
+  song_hash[artist] << song
+  end
+end
+puts song_hash
 
