@@ -1,4 +1,5 @@
-#1
+#1 Return true if every element of the tools array starts with an "r" and false otherwise.
+# tools = ["ruby", "rspec", "rails"]
 def r_elements(tools)
   count = 0
   tools.each do |word| 
@@ -14,7 +15,8 @@ end
 
 r_elements(["ruby", "rspec", "rails"])
 
-#2
+#2 Create a new array from the captain_planet array with all the elements that contain the letter "a".  
+# captain_planet = ["earth", "fire", "wind", "water", "heart"]
 def new_array(captain_planet)
   a_array = []
   captain_planet.each do |element| 
@@ -27,7 +29,8 @@ end
 
 new_array(["earth", "fire", "wind", "water", "heart"])
 
-#3
+#3 Identify the first element in the stuff array that begins with the letters "wa".
+# stuff = ["candy", :pepper, "wall", :ball, "wacky"]
 def first_in_array(stuff)
   stuff.each do |element|
     if element.to_s.start_with?("wa")
@@ -39,7 +42,8 @@ end
 
 first_in_array(["candy", :pepper, "wall", :ball, "wacky"])
 
-#4
+#4 Identify all the elements in the stuff array that begins with the letters "wa".
+# Remove anything that is not a string from an array.stuff = ["candy", :pepper, "wall", :ball, "wacky"
 def all_in_array(stuff)
   stuff.each do |element|
     if element.to_s.start_with?("wa")
@@ -50,7 +54,8 @@ end
 
 all_in_array(["candy", :pepper, "wall", :ball, "wacky"])
 
-#5
+#5 Remove anything that is not a string from an array.
+# Hint: Use the method "class"  "blake".class
 def strings_in_array(stuff)
   stuff.each do |element|
     if element.class == String
@@ -63,7 +68,7 @@ end
 
 strings_in_array(["candy", :pepper, "wall", :ball, "wacky"])
 
-#6
+#6 Change the third letter of all strings in an array.  Your solution should work for arrays that have mixed types of objects inside it.
 def change_third_char(mixed_array)
   mixed_array.each do |word|
     if word.class == String
@@ -77,7 +82,8 @@ end
 
 change_third_char(["candy", :pepper, "wall", :ball, "wacky"])
 
-#7
+#7 Count the number of times each word appears in a string and store that data in a hash that has the word as the key and the count as the value.
+# string = "the flatiron school is better than general assembly"
 def word_count(split_string)
   word_hash = {}
   split_string.split.each do |word|
@@ -88,7 +94,9 @@ end
 
 word_count("the flatiron school is better than general assembly")
 
-#8
+#8 Count the number of times each hash appears in the array, remove any duplicates and add a :count key to each hash with the number of times it appears.
+# [{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}]
+# becomes [{:name => "blake", :count => 2}, {:name => "ashley", :count => 1}]
 def hash_count(array_hash)
   new_hash = {}
   array_hash.each do |person| 
@@ -131,7 +139,7 @@ hash_count([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])
 
 # hash_count([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])
 
-#9
+#9 Take two arrays of hashes and merge the first names and last names into a new array of hashes where each hash has all information about itself.
 def merge_dem_arrays(array1, array2)
   merged = []
   array2.each do |hash2|
@@ -184,7 +192,6 @@ merge_dem_arrays(name_array, info_array)
 #   :last_name => "dubs"}
 # ]
 
-
 #returns:
 # [
 #        {
@@ -201,7 +208,7 @@ merge_dem_arrays(name_array, info_array)
 #     }
 # ]
 
-#10
+#10 Return all hashes that have a value of "cool" for the :temperature key.
 def cool_array(thing)
   answer_array = []
   thing.each do |person|
@@ -222,7 +229,7 @@ cool_array([
     }
 ])
 
-#11
+#11 Convert the nested data structure from its current structure to a structure that organizes the schools by location.
 dev_schools = 
 {
   "flatiron school bk" => {
