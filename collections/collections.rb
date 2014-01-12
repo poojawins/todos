@@ -55,10 +55,29 @@ num_hash = {
   :less_than_10 => less_than_10
 }
 
+**refactored: 
+num_array = [100, 1000, 5, 2, 3, 15, 1, 1, 100]
+num_hash = {
+  :greater_than_10 => [],
+  :less_than_10 => []
+}
+num_array.each do |number|
+  if number > 10
+    num_hash[:greater_than_10] << number
+  elsif number < 10
+    num_hash[:less_than_10] << number
+  end
+end
+puts num_hash
+
 #9. find all the winners and put them in an array
 who_wins = {:blake => "winner", :ashley => "loser", :caroline => "loser", :carlos => "winner"}
 winners = []
 who_wins.each{ |name, status| status == "winner" ? winners << name : next }
+
+**refactored:
+who_wins = {:blake => "winner", :ashley => "loser", :caroline => "loser", :carlos => "winner"}
+puts who_wins.map{ |name, status| status == "winner" ? name : next }.compact
 
 #10. add the following arrays
   #[1,2,3] and [5,9,4]
@@ -68,6 +87,10 @@ who_wins.each{ |name, status| status == "winner" ? winners << name : next }
 some_words = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
 a_words = []
 some_words.each{ |word| word[0] == "a" ? a_words << word : next }
+
+**refactored: 
+some_words = ["apple", "orange", "pear", "avis", "arlo", "ascot" ]
+puts some_words.map{ |word| word[0] == "a" ? word : next }.compact
 
 #12. sum all the numbers in the following array
 sum_array = [11,4,7,8,9,100,134].inject(:+)
@@ -82,7 +105,6 @@ end
 #CHALLENGES
 
 #14 word count
-
 #Count how many times each word appears in my story.
 #Tip: You'll need to use Hash.new(0) to do this rather than creating a hash using literal syntax like {}.
 
@@ -106,7 +128,6 @@ end
 puts my_hash
 
 #15 song library
-
 #convert the following array of song titles to a nested hash of the form
 #{:artist1 => :songs => [], :artist2 => :songs => []}
 

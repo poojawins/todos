@@ -15,6 +15,16 @@ end
 
 r_elements(["ruby", "rspec", "rails"])
 
+**refactored:
+def r_elements(tools)
+  count = 0
+  tools.all? do |word| 
+    word[0] == "r" 
+  end
+end
+
+r_elements(["ruby", "rspec", "rails"])
+
 #2 Create a new array from the captain_planet array with all the elements that contain the letter "a".  
 # captain_planet = ["earth", "fire", "wind", "water", "heart"]
 def new_array(captain_planet)
@@ -25,6 +35,15 @@ def new_array(captain_planet)
     end
   end
   a_array
+end
+
+new_array(["earth", "fire", "wind", "water", "heart"])
+
+**refactored:
+def new_array(captain_planet)
+  captain_planet.select do |element| 
+    element.include? "a"
+  end
 end
 
 new_array(["earth", "fire", "wind", "water", "heart"])
