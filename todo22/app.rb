@@ -1,12 +1,13 @@
 require 'bundler'
 require 'sinatra'
 Bundler.require
-require '.lib/birthday.rb'
 
 class Birthday < Sinatra::Application
   
   get '/' do
-    
+    birthday = Time.new(1990, 11, 13).strftime("%m %-d")
+    @now = Time.new.strftime("%m %-d")
+    birthday == @now ? @answer = "Yes" : @answer = "No"
     erb :index
   end
 
