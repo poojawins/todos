@@ -15,5 +15,5 @@ var firstEven = function(items){
   }
 }
 
-console.log(firstEven([1, 2, 3]));
+console.log(firstEven([1, 2, 3, 4]));
 

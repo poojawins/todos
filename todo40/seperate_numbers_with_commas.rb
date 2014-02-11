@@ -1,11 +1,10 @@
 #Separate numbers with a comma each three digits.
 
 def separate_with_comma(n)
-  n.each do |digit|
-
-  end
+  n.to_s.reverse.gsub(/(\d{3})(\d+)(\d*)/, $1",").reverse
 end
 
-separate_with_comma(1) #=> "1" 
-separate_with_comma(1000) #=> "1,000" 
-separate_with_comma(10000) #=> "10,000"
+puts separate_with_comma(1)
+puts separate_with_comma(1000)
+puts separate_with_comma(10000)
+

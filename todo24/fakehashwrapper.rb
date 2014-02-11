@@ -2,7 +2,7 @@
 
 # I would like to be able to find keys in the hash regardless of whether they are strings or symbols.
 
-# For example
+# For example:
 
 # obj = {:blake => "the best"}
 # obj["blake"] #=> "the best"
@@ -13,10 +13,10 @@
 
 class FakeHashWrapper
 
-  attr_reader :hash
+  attr_accessor :elements
 
-  def initialize(hash ={ :blake => "the best", :ashley => "awesome", :armando=> "angry" })
-    @hash = hash
+  def initialize
+    @elements = elements
   end
 
   def set_values(blah, val)
@@ -24,4 +24,8 @@ class FakeHashWrapper
   end
 
 end
+
+
+fake = FakeHashWrapper.new(hash ={ :blake => "the best", :ashley => "awesome", :armando=> "angry" })
+
 
