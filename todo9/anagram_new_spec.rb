@@ -15,5 +15,4 @@ describe Anagram, 'match' do
     check = Anagram.new('act')
     check.match(%w(tac cat dog wolf)).should eq(['tac', 'cat'])
   end
-
 end

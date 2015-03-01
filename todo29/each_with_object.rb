@@ -1,4 +1,3 @@
-# Instructions:
 # Each with object works much like inject. Use each_with_object to return an array containing one reversed string for each string that has an even number of characters.
 
 def even_sum(arr)
@@ -6,4 +5,3 @@ def even_sum(arr)
 end
 
 even_sum(["cat", "dog", "bird", "fish"]) #=> ["drib", "hsif"]
-

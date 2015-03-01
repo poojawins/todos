@@ -9,7 +9,6 @@
 
 require './deli_counter'
 
-
 describe Deli, "#take_a_number" do
   it "should return customer's ticket number" do 
     Deli.new.take_a_number("Pooja").should eq(1)

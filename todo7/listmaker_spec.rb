@@ -6,7 +6,6 @@ describe "#make_list" do
   end
 end
 
-
 #to use this with class
 #
 #describe Array,"#make_list" do

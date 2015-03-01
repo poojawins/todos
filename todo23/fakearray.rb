@@ -18,9 +18,7 @@
 #   container << element + 1
 # end
 
-
 # Note: I've intentionally omitted a step here where you'd have to somehow tell your class that were using an array of 1,2,3
-
 
 class FakeArray
   attr_accessor :items
@@ -30,18 +28,16 @@ class FakeArray
   end
 
   def each
-    fake_array.each do |item|
+    @fake_array.each do |item|
       yield item
     end
   end
 
   def first
-    fake_array[0]
+    @fake_array[0]
   end
 
   def [](i)
-    fake_array[i]
+    @fake_array[i]
   end
-
 end
-

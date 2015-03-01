@@ -9,23 +9,20 @@ class SecretHandshake
   def commands
     do_array = []
     command_array = ["wink", "double blink", "close your eyes", "jump"]
-      
-      if @number_string.length > 4
-        command_array.reverse
-      end
+
+    if @number_string.length > 4
+      command_array.reverse
+    end
     
     do_array << command_array[0] if @number_string[-1] == "1" 
-    
     do_array << command_array[1] if @number_string[-2] == "1" 
-    
     do_array << command_array[2] if @number_string[-3] == "1" 
-    
     do_array << command_array[3] if @number_string[-4] == "1" 
 
-      if @number_string.length > 4
-        do_array.reverse!
-      end
-    
+    if @number_string.length > 4
+      do_array.reverse!
+    end
+
     do_array
 
   end 
@@ -55,4 +52,3 @@ handshake.commands
 
 handshake = SecretHandshake.new("stuff")
 handshake.commands
-

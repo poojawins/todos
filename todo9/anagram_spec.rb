@@ -9,7 +9,6 @@
 # PS what is %w? 
 # http://stackoverflow.com/questions/1274675/ruby-what-does-warray-mean
 
-
 RSpec.configure do |config|
   # Use color in STDOUT
   config.color_enabled = true

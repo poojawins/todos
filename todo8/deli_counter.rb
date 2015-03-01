@@ -26,4 +26,3 @@ puts my_turn.now_serving
 puts my_turn.now_serving
 puts my_turn.now_serving
 puts my_turn.now_serving
-

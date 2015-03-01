@@ -9,5 +9,4 @@ describe String, "#count_sentences" do
   it "should return zero if there are no sentences in a string" do
     "".count_sentences.should eq(0)
   end
-
 end

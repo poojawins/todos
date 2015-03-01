@@ -27,7 +27,6 @@ describe 'refactoring' do
     end
   end
   
-  
   describe 'pay_by' do
     it 'should have a method pay_by that receives the order, computes boiler plate code, and invokes the block' do
       @order = double :order
@@ -45,5 +44,5 @@ describe 'refactoring' do
       yielded.should eq([@order])
     end
   end
-  
+
 end

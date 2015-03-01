@@ -84,4 +84,3 @@ version_sorted_filenames = [
   "foo-100.ext",
 ]
 assert_equal filenames.version_sort, version_sorted_filenames
-

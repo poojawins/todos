@@ -39,5 +39,3 @@ def decode(joined_password)
   pass_as_string = password.to_s
   #password is a symbol
   #:all_the_internets
-
-

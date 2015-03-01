@@ -25,7 +25,4 @@ class FakeHashWrapper
 
 end
 
-
 fake = FakeHashWrapper.new(hash ={ :blake => "the best", :ashley => "awesome", :armando=> "angry" })
-
-

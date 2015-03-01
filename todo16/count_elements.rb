@@ -1,4 +1,3 @@
-# Instructions:
 # Count elements in an Array by returning a hash with keys of the elements and values of the amount of times they occur.
 
 test = ['cat', 'dog', 'fish', 'fish']

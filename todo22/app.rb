@@ -12,4 +12,3 @@ class Birthday < Sinatra::Application
   end
 
 end
-

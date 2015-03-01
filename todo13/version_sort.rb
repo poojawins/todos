@@ -1,23 +1,22 @@
-# class Array
-  
-#   def version_sort (some_array)
-#     some_array.each do |files|
+class Array  
+  def version_sort
+#     self.each do |files|
 #       compare = files.match(/(\d+)/)
 #     end
-
-#   end
-
-# end
-
-
-  def version_sort
-    sort_by do |file|
-      file.scan(/\d*/).collect do |x|
-        x.hex
-      end
-    end
   end
+end
 
+# Armando's solution - does it actually work?
+# I added "apple-1" and "apple-2" and the (adjusted) tests failed!
+# class Array
+#   def version_sort
+#     sort_by do |file|
+#       file.scan(/\d*/).collect do |x|
+#         x.hex
+#       end
+#     end
+#   end
+# end
 
 filenames = [
   "foo-1.10.2.ext",
@@ -70,6 +69,4 @@ version_sorted_filenames = [
   "foo-100.ext",
 ]
 
-my_sort = Array.new
-puts my_sort.version_sort(filenames)
-
+filenames.version_sort

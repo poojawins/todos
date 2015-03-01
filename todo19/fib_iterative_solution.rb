@@ -1,4 +1,3 @@
-
 def fibo_finder(n)
   if n == 0
     return 0

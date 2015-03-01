@@ -22,4 +22,3 @@ def array_init(size=5)
     array = Array.new(size) { |i| (i * 100).to_s } 
   end
 end
-

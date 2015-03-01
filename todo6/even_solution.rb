@@ -7,4 +7,3 @@ def first_even(items)
   end
 }
 end
-

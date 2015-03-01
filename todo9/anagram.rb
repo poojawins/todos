@@ -21,4 +21,3 @@ end
 
 my_anagram = Anagram.new("act")
 puts my_anagram.match(%w(cat tac sum above action))
-
